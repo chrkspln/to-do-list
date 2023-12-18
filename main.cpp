@@ -52,6 +52,7 @@ int main()
 std::map<std::string, bool> task_list{};
 void add_task()
 {
+	// функція додає таск в список але не читає перше слово якогось лешего
 	std::cout << "enter task to add here (first word wont be read): ";
 	std::string task;
 	std::cin.clear();
@@ -64,6 +65,7 @@ void add_task()
 
   void delete_task()
   {
+	// тут наче все норм працює
 	std::cout << "enter task to delete here: ";
 	std::string task;
 	while (!(std::cin >> task) and (std::cin.peek() != '\n'));
@@ -80,6 +82,8 @@ void add_task()
 
   void mark_as_done()
 {
+	// тут ніхера не працює я думаю через те шо я неправильно
+	// використовую ключі
 	std::cout << "enter task to mark as done here: ";
 	std::string task;
 	while (!(std::cin >> task) and (std::cin.peek() != '\n'));
@@ -98,6 +102,7 @@ void add_task()
 
   void edit_task()
 {
+	// знову нічого не працює і навіть до циклу не доходе
 	std::cout << "enter task to edit here: ";
 	std::string task;
 	while (!(std::cin >> task) and (std::cin.peek() != '\n'));
@@ -116,6 +121,7 @@ void add_task()
 
 void display_all_tasks()
 {
+	// тут все ок
 	std::string is_done{};
 	for (auto it = task_list.begin(); it != task_list.end(); ++it) {
 		it->second ? is_done = "done!" : is_done = "in progress";
